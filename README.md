@@ -14,12 +14,13 @@ when a tempting angle fails on contact with a real number.
 | # | Status | Paper | Question | Finding |
 |---|---|---|---|---|
 | 01 | ✅ done | Trabolsi COF / PFOA, *Nat. Commun.* 2024 ([10.1038/s41467-024-53945-4](https://doi.org/10.1038/s41467-024-53945-4)) | Can a 13 m²/g material hold 2600 mg/g of PFOA as adsorption? | No — it's ~80× the monolayer capacity; the number is framework-templated PFOA aggregation, not a working capacity. See `cof-pfoa/`. |
-| 02 | 🔄 in progress | Dupla ERW, *Environ. Sci. Technol.* 2025 ([10.1021/acs.est.5c09820](https://doi.org/10.1021/acs.est.5c09820)) | Where does the "missing" alkalinity go when Na proves dissolution but the MRV proxies show nothing? | Na-tracer mass balance — needs the porewater SI pulled. See `erw-dupla/`. |
+| 02 | ✅ done | Dupla ERW, *Environ. Sci. Technol.* 2025 ([10.1021/acs.est.5c09820](https://doi.org/10.1021/acs.est.5c09820)) | Where does the "missing" alkalinity go when Na proves dissolution but the MRV proxies show nothing? | Basalt releases Ca+Mg at ~7.3× the Na equivalents, so the divalent cations (~88% of the alkalinity) get intercepted by exchange + uptake; standard DIC/Ca/Mg proxies under-detect dissolution. See `erw-dupla/`. |
 
 ## Reproduce
 
 ```bash
 python cof-pfoa/monolayer_check.py   # 2600 mg/g is 73–116× the monolayer on 13 m²/g
+python erw-dupla/na_tracer_balance.py # Ca+Mg release is ~7.3× Na equiv; proxies miss ~88% of alkalinity
 ```
 Standard library only. No dependencies.
 

@@ -96,12 +96,21 @@
 
 <div class="card">
   <div class="hd">
-    <span class="st prog">&#9679; Reanalysis 02 &middot; in progress</span>
-    <h2>Where does the "missing" alkalinity go in a basalt enhanced-weathering field trial?</h2>
+    <span class="st done">&#10003; Reanalysis 02 &middot; complete</span>
+    <h2>Standard ERW monitoring can miss ~90% of the alkalinity, because the cations that carry it get intercepted</h2>
     <div class="cite">Dupla, Bertagni &amp; Grand, "Three Years of Field Trials Indicate a Sustained Enhanced Rock Weathering Signal with Limited CO<sub>2</sub> Removal," <i>Environ. Sci. Technol.</i> 59:25751 (2025), <a href="https://doi.org/10.1021/acs.est.5c09820">10.1021/acs.est.5c09820</a> (CC-BY).</div>
   </div>
   <div class="bd">
-    <p>Basalt on Swiss vineyards removed only ~100 kg CO<sub>2</sub>/ha/yr (10&ndash;30&times; below models), yet porewater <strong>sodium ran 3&times; higher</strong> (dissolution is unambiguous) while every standard MRV proxy (pH, DIC, Ca, Mg) showed nothing. A Na-tracer charge/mass-balance reconstruction against the basalt's mineral stoichiometry can partition the missing alkalinity between cation exchange onto vineyard clay/organic matter, plant uptake, lateral export, and simple below-detection noise &mdash; reframing an industry-wide "why does field ERW underperform" measurement problem. Open SI; needs the porewater time-series pulled and modeled. Writeup to follow.</p>
+    <p>Basalt on Swiss vineyards removed only ~100 kg CO<sub>2</sub>/ha/yr (10&ndash;30&times; below models), yet porewater <strong>sodium ran 3&times; higher</strong> &mdash; dissolution is unambiguous &mdash; while every standard MRV proxy (pH, DIC, Ca, Mg) showed nothing. The resolution is stoichiometric and needs no absolute concentrations, only the ratio in which basalt releases cations:</p>
+    <div class="eq">basalt releases Ca+Mg at ~7.3&times; the Na equivalents &rarr; divalent cations carry ~88% of the alkalinity</div>
+    <div class="note">
+      <span class="lbl">The mechanism</span>
+      Na is a conservative tracer &mdash; it barely sorbs and is not a plant macronutrient, so it stays in solution and reveals the true dissolution. Ca and Mg, which carry ~88% of the weathering alkalinity, are strongly retained by <strong>cation exchange and plant uptake</strong> in a base-poor, biologically active vineyard soil. So a "3&times; Na, flat Ca/Mg/alkalinity" signature means most of the alkalinity is being intercepted before it reaches the porewater probes. <strong>The standard DIC/Ca/Mg proxies systematically under-detect ERW dissolution in cropland; a conservative tracer like Na should anchor the mass balance.</strong>
+    </div>
+    <div class="note wall">
+      <span class="lbl">What this reframes, and what it does not resolve</span>
+      Retained is not the same as durably removed. If the exchange-held / plant-cycled Ca+Mg eventually leaches as bicarbonate to the ocean, the ~100 kg/ha/yr figure <em>under-counts</em> durable removal. If it is held indefinitely or respired back with CO<sub>2</sub>, the pessimistic number may be right. So the Na anomaly doesn't overturn the paper's honest headline &mdash; it identifies the decisive missing measurement: the <strong>fate</strong> of the retained alkalinity (exchangeable-cation pools + deep drainage flux), not just porewater DIC. Reproduce: <span style="font-family:var(--mono);font-size:.85em">erw-dupla/na_tracer_balance.py</span>. Uses typical basalt composition; the paper's exact basalt and porewater Na (paywalled SI) would sharpen the numbers but not the ~7&times; ratio.
+    </div>
   </div>
 </div>
 
